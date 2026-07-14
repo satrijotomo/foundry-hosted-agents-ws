@@ -17,7 +17,7 @@ services:
                 cpu: "0.5"
                 memory: 1Gi
         description: |
-            A basic Agent Framework travel assistant hosted by Foundry.
+            TravelBuddy is an Agent Framework hosted agent with local Python function tools for destination weather, local time, and currency conversion.
         environmentVariables:
             - name: AZURE_AI_PROJECT_ENDPOINT
               value: ${AZURE_AI_PROJECT_ENDPOINT}
@@ -33,6 +33,7 @@ services:
                 - Azure AI AgentServer
                 - Responses Protocol
                 - Travel Assistant
+                - Function Tools
         name: foundry-workshop-travel-buddy
         protocols:
             - protocol: responses

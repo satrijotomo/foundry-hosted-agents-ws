@@ -9,6 +9,9 @@ from agent_framework_foundry_hosting import ResponsesHostServer
 from azure.identity import DefaultAzureCredential
 from dotenv import load_dotenv
 
+# travel_assistant/main.py
+from tools import convert_currency, get_local_time, get_weather
+
 load_dotenv(override=True)
 
 
@@ -32,6 +35,7 @@ def main() -> None:
             "budget awareness, and safety-minded tips."
         ),
         # History is managed by the hosting infrastructure, so don't store it server-side.
+        tools=[get_weather, get_local_time, convert_currency],  # <-- add this line
         default_options={"store": False},
     )
 
